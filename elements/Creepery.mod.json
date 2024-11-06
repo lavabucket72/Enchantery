@@ -11,6 +11,12 @@
     "incompatibleEnchantments": [],
     "supportedItems": [
       {
+        "value": "Items.AMETHYST_SHARD"
+      },
+      {
+        "value": "Items.SPYGLASS"
+      },
+      {
         "value": "Items.WOODEN_SWORD"
       },
       {
@@ -29,13 +35,13 @@
         "value": "Items.NETHERITE_SWORD"
       },
       {
-        "value": "Items.IRON_AXE"
-      },
-      {
         "value": "Items.WOODEN_AXE"
       },
       {
         "value": "Items.STONE_AXE"
+      },
+      {
+        "value": "Items.IRON_AXE"
       },
       {
         "value": "Items.GOLDEN_AXE"
@@ -45,12 +51,6 @@
       },
       {
         "value": "Items.NETHERITE_AXE"
-      },
-      {
-        "value": "Items.AMETHYST_SHARD"
-      },
-      {
-        "value": "Items.SPYGLASS"
       }
     ],
     "isTreasureEnchantment": true,

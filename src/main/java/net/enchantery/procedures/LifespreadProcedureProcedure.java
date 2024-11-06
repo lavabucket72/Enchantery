@@ -1,29 +1,29 @@
 package net.enchantery.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ClipContext;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.BoneMealItem;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.util.RandomSource;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
-
-import net.enchantery.init.EnchanteryModEnchantments;
 
 import javax.annotation.Nullable;
 
-@Mod.EventBusSubscriber
-public class BonemealEnchantmentProcedure {
+@EventBusSubscriber
+public class LifespreadProcedureProcedure {
 	@SubscribeEvent
 	public static void onRightClickItem(PlayerInteractEvent.RightClickItem event) {
 		if (event.getHand() != event.getEntity().getUsedItemHand())
@@ -38,9 +38,9 @@ public class BonemealEnchantmentProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		ItemStack item = ItemStack.EMPTY;
-		item = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-		if (EnchantmentHelper.getItemEnchantmentLevel(EnchanteryModEnchantments.LIFESPREAD.get(), item) != 0) {
+		ItemStack TOOL = ItemStack.EMPTY;
+		TOOL = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
+		if (TOOL.getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.parse("enchantery:lifespread")))) != 0) {
 			if (world instanceof Level _level) {
 				BlockPos _bp = new BlockPos(
 						entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(5)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX(),
@@ -51,15 +51,12 @@ public class BonemealEnchantmentProcedure {
 						_level.levelEvent(2005, _bp, 0);
 				}
 			}
-			{
-				ItemStack _ist = item;
-				if (_ist.hurt(2, RandomSource.create(), null)) {
-					_ist.shrink(1);
-					_ist.setDamageValue(0);
-				}
+			if (world instanceof ServerLevel _level) {
+				TOOL.hurtAndBreak(2, _level, null, _stkprov -> {
+				});
 			}
 			if (entity instanceof Player _player)
-				_player.getCooldowns().addCooldown(item.getItem(), 30);
+				_player.getCooldowns().addCooldown(TOOL.getItem(), 30);
 		}
 	}
 }

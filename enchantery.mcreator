@@ -1,18 +1,6 @@
 {
   "mod_elements": [
     {
-      "name": "Creepery",
-      "type": "enchantment",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "creepery",
-      "metadata": {
-        "files": [
-          "src/main/java/net/enchantery/enchantment/CreeperyEnchantment.java"
-        ]
-      }
-    },
-    {
       "name": "Lifespread",
       "type": "enchantment",
       "compiles": true,
@@ -20,19 +8,19 @@
       "registry_name": "lifespread",
       "metadata": {
         "files": [
-          "src/main/java/net/enchantery/enchantment/LifespreadEnchantment.java"
+          "src/main/resources/data/enchantery/enchantment/lifespread.json"
         ]
       }
     },
     {
-      "name": "BonemealEnchantment",
+      "name": "LifespreadProcedure",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "bonemeal_enchantment",
+      "registry_name": "lifespread_procedure",
       "metadata": {
         "files": [
-          "src/main/java/net/enchantery/procedures/BonemealEnchantmentProcedure.java"
+          "src/main/java/net/enchantery/procedures/LifespreadProcedureProcedure.java"
         ],
         "dependencies": [
           {
@@ -47,31 +35,31 @@
       }
     },
     {
-      "name": "ExplosionEnchantNonSpyglass",
+      "name": "Creepery",
+      "type": "enchantment",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "creepery",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/enchantery/enchantment/creepery.json"
+        ]
+      }
+    },
+    {
+      "name": "EchantmentProcedure2",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "explosion_enchant_non_spyglass",
+      "registry_name": "explosive_enchantment_procedure",
       "metadata": {
         "files": [
-          "src/main/java/net/enchantery/procedures/ExplosionEnchantNonSpyglassProcedure.java"
+          "src/main/java/net/enchantery/procedures/EchantmentProcedure2Procedure.java"
         ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
           },
           {
             "name": "world",
@@ -81,14 +69,14 @@
       }
     },
     {
-      "name": "ExplosionEnchantProcedureSpyglass",
+      "name": "Explosiveenchantprocedurespyglass",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "explosion_enchant_procedure_spyglass",
+      "registry_name": "explosiveenchantprocedurespyglass",
       "metadata": {
         "files": [
-          "src/main/java/net/enchantery/procedures/ExplosionEnchantProcedureSpyglassProcedure.java"
+          "src/main/java/net/enchantery/procedures/ExplosiveenchantprocedurespyglassProcedure.java"
         ],
         "dependencies": [
           {
@@ -105,7 +93,17 @@
   ],
   "variable_elements": [],
   "sound_elements": [],
-  "tag_elements": {},
+  "tag_elements": {
+    "ENCHANTMENTS:minecraft:non_treasure": [
+      "~CUSTOM:Lifespread"
+    ],
+    "ENCHANTMENTS:minecraft:treasure": [
+      "~CUSTOM:Creepery"
+    ],
+    "ENCHANTMENTS:minecraft:on_random_loot": [
+      "~CUSTOM:Lifespread"
+    ]
+  },
   "tab_element_order": {},
   "language_map": {
     "en_us": {
@@ -123,7 +121,7 @@
     "version": "1.1.1",
     "description": "Adds various enchantments :lenny:",
     "author": "lavabucket72",
-    "websiteURL": "https://modrinth.com/mod/enchant_mod/",
+    "websiteURL": "https://modrinth.com/project/enchant_mod/",
     "license": "MIT License",
     "serverSideOnly": false,
     "modPicture": "minecraft_title",
@@ -131,7 +129,7 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.20.1",
+    "currentGenerator": "neoforge-1.21.1",
     "credits": "MCreator",
     "modElementsPackage": "net.enchantery"
   },
