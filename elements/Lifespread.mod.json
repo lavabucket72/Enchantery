@@ -1,0 +1,22 @@
+{
+  "_fv": 69,
+  "_type": "enchantment",
+  "definition": {
+    "name": "Lifespread",
+    "supportedSlots": "any",
+    "weight": 4,
+    "anvilCost": 1,
+    "maxLevel": 1,
+    "damageModifier": 0,
+    "incompatibleEnchantments": [],
+    "supportedItems": [
+      {
+        "value": "TAG:minecraft:enchantable/weapon"
+      }
+    ],
+    "isTreasureEnchantment": false,
+    "isCurse": false,
+    "canGenerateInLootTables": true,
+    "canVillagerTrade": false
+  }
+}

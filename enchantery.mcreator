@@ -1,0 +1,139 @@
+{
+  "mod_elements": [
+    {
+      "name": "Creepery",
+      "type": "enchantment",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "creepery",
+      "metadata": {
+        "files": [
+          "src/main/java/net/enchantery/enchantment/CreeperyEnchantment.java"
+        ]
+      }
+    },
+    {
+      "name": "Lifespread",
+      "type": "enchantment",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lifespread",
+      "metadata": {
+        "files": [
+          "src/main/java/net/enchantery/enchantment/LifespreadEnchantment.java"
+        ]
+      }
+    },
+    {
+      "name": "BonemealEnchantment",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bonemeal_enchantment",
+      "metadata": {
+        "files": [
+          "src/main/java/net/enchantery/procedures/BonemealEnchantmentProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ExplosionEnchantNonSpyglass",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "explosion_enchant_non_spyglass",
+      "metadata": {
+        "files": [
+          "src/main/java/net/enchantery/procedures/ExplosionEnchantNonSpyglassProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ExplosionEnchantProcedureSpyglass",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "explosion_enchant_procedure_spyglass",
+      "metadata": {
+        "files": [
+          "src/main/java/net/enchantery/procedures/ExplosionEnchantProcedureSpyglassProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {},
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "enchantment.enchantery.creepery": "Creepery",
+      "enchantment.enchantery.lifespread": "Lifespread"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "enchantery",
+    "modName": "Enchantery",
+    "version": "1.1.1",
+    "description": "Adds various enchantments :lenny:",
+    "author": "lavabucket72",
+    "websiteURL": "https://modrinth.com/mod/enchant_mod/",
+    "license": "MIT License",
+    "serverSideOnly": false,
+    "modPicture": "minecraft_title",
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.20.1",
+    "credits": "MCreator",
+    "modElementsPackage": "net.enchantery"
+  },
+  "mcreatorVersion": 202400342716
+}
