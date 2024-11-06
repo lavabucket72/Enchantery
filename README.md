@@ -10,4 +10,5 @@
 - Right-clicking with any other item drains `8` durability / enchantment level
 
 >[!NOTE]
->Source Code in repository is for version Forge 1.20.1, check `Releases` for NeoForge
+>Branch Source Code: `Forge 1.20.1`
+
