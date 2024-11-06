@@ -1,7 +1,3 @@
->[!WARNING]
->Please use `Releases` tab to get source code to import inside of MCreator.
-
-
 
 # ▪︎ **LATEST** Changelog
 ## Enchantments Reworked
@@ -12,3 +8,6 @@
 - Amethyst Shards now break upon use with this enchantment.
 - Spy Glass explosion power is **increased** for a price of lowering enchantment level by 1 with each use
 - Right-clicking with any other item drains `8` durability / enchantment level
+
+>[!NOTE]
+>Source Code in repository is for version Forge 1.20.1, check `Releases` for NeoForge
